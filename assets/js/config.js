@@ -13,7 +13,7 @@ window.SITE_CONFIG = {
         role: "Solo: data cleaning, modeling, evaluation and website",
         studentId: "6703500",
         email: "arkar.p67@rsu.ac.th",
-        github: "https://github.com/Arkar99"
+        github: "https://github.com/Arkar99/"
       }
       // For a larger team, copy the block above and add more members.
     ]
@@ -22,8 +22,8 @@ window.SITE_CONFIG = {
   course: {
     university: "Rangsit University",
     program: "ICT324",
-    course: "Data Warehouse And Data Mining",
-    instructor: "Dr. Kritsada",
+    course: "Data Warehouse & Data Mining",
+    instructor: "Dr. Krisada",
     milestone: "Milestone #3",
     term: "1/2026"
   },
@@ -33,8 +33,9 @@ window.SITE_CONFIG = {
     repo: "https://github.com/Arkar99/bkk-railway-passenger-density-predictor",
     notebook: "https://colab.research.google.com/drive/1Xdo1w53qcjqNonB08UqDMh-YhjgCCKlK?usp=sharing",
     dataset: "https://data.go.th/dataset/stat_pass_rail",
+    datasetOwner: "Department of Rail Transport",
     datasetLicense: "Open Data Common",
-    webapp: "https://bkk-railway-passenger-density-predi.vercel.app/"
+    webapp: "https://arkar99.github.io/BKK_Railway_Passenger_Density_Predictor_Showcase/index.html"
   },
 
   project: {

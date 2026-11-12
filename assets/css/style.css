@@ -494,3 +494,20 @@ table.dict { width: 100%; border-collapse: collapse; font-size: 14px; min-width:
 .detail .mini-title { font: 600 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin-bottom: 10px; }
 .detail .mini .flow .node { font-size: 12px; padding: 6px 10px; }
 .detail .mini .ladder .step b { font-size: 13.5px; }
+
+/* ==========================================================================
+   Part 3 additions: findings, gradient key, wrapped tables, takeaway cards
+   ========================================================================== */
+.finding { font-size: 14px; color: var(--muted); margin: 0 0 14px; max-width: 70ch; }
+.finding b { color: var(--text); font-weight: 650; }
+.grad { height: 8px; border-radius: 4px; margin-top: 14px; }
+.grad-labels { display: flex; justify-content: space-between; font: 500 11px var(--mono); color: var(--faint); margin-top: 5px; }
+table.dict.wrap td:first-child { font-family: var(--font); font-size: 14px; white-space: normal; color: var(--text); min-width: 190px; }
+table.dict.wrap td:nth-child(2) { min-width: 200px; color: var(--text); }
+.takeaways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.takeaways .panel b { display: block; color: var(--text); font-size: 17px; font-weight: 650; margin-bottom: 6px; }
+.takeaways .panel p { font-size: 14px; color: var(--muted); }
+.takeaways .panel .ev { margin-top: 12px; font: 600 12.5px var(--mono); color: var(--board); }
+@media (max-width: 860px) { .takeaways { grid-template-columns: 1fr; } }
+#facts.board { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 560px) { #facts.board { grid-template-columns: repeat(2, 1fr); } }

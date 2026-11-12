@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Explore the Data · Team RoBot</title>
-<meta name="description" content="Patterns by weekday, month, holiday and year.">
+<title>Explore · Team RoBot</title>
+<meta name="description" content="Weekday, month, holiday and yearly patterns in daily rail ridership.">
 <meta name="theme-color" content="#0a0e13">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -13,10 +13,70 @@
 <a class="skip" href="#main">Skip to content</a>
 <header id="site-header"></header>
 <main id="main">
-<section class="section"><div class="wrap">
-  <div class="section-head"><h2>Explore the Data</h2></div>
-  <div class="stub"><h2>Coming in Part 3</h2><p>Patterns by weekday, month, holiday and year.</p></div>
-</div></section>
+
+<section class="page-head">
+  <div class="wrap">
+    <span class="kicker">Data understanding</span>
+    <h1>Explore the patterns</h1>
+    <p class="lede">What the calendar tells us about ridership. These patterns are the inputs the model learns from.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Ridership over time</h2><p>Weekly average per day</p></div>
+    <div class="chart-card">
+      <div class="seg" id="line-pick" role="group" aria-label="Choose a line"></div>
+      <p class="finding" id="tl-finding" style="margin-top:14px"></p>
+      <div id="timeline"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Day of the week</h2><p>100 = the line's own average</p></div>
+    <div class="grid-2 wide-left">
+      <div class="chart-card"><div id="wd-heat"></div><div id="wd-key"></div></div>
+      <div class="chart-card"><div class="chart-title">Weekend vs weekday</div><div class="chart-sub">Change in average riders</div><div id="we-bars"></div></div>
+    </div>
+    <p class="finding" id="wd-finding" style="margin-top:14px"></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Month and holidays</h2><p>100 = the line's own average</p></div>
+    <div class="grid-2 wide-left">
+      <div class="chart-card"><div id="mo-heat"></div><div id="mo-key"></div></div>
+      <div class="chart-card"><div class="chart-title">Public holiday vs normal day</div><div class="chart-sub">Change in average riders</div><div id="hol-bars"></div></div>
+    </div>
+    <p class="finding" id="mo-finding" style="margin-top:14px"></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Year by year</h2><p>2025 = 100</p></div>
+    <div class="chart-card"><div id="yr-heat"></div><div id="yr-key"></div>
+      <p class="caption">2022 and 2026 are partial years. Pink Line 2023 is inflated by its free-trial launch.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Do lines move together?</h2><p>Correlation of daily counts</p></div>
+    <div class="chart-card"><div id="corr"></div><div id="corr-key"></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>What this means for the model</h2></div>
+    <div class="takeaways" id="takeaways"></div>
+  </div>
+</section>
+
 </main>
 <footer id="site-footer"></footer>
 <script src="assets/js/config.js"></script>
@@ -24,6 +84,8 @@
 <script src="assets/vendor/d3.min.js"></script>
 <script src="assets/js/charts.js"></script>
 <script src="assets/js/charts-more.js"></script>
+<script src="assets/js/charts-explore.js"></script>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/explore.js"></script>
 </body>
 </html>

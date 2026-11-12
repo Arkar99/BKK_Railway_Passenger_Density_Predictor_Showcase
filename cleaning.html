@@ -13,10 +13,57 @@
 <a class="skip" href="#main">Skip to content</a>
 <header id="site-header"></header>
 <main id="main">
-<section class="section"><div class="wrap">
-  <div class="section-head"><h2>Data Cleaning</h2></div>
-  <div class="stub"><h2>Coming in Part 3</h2><p>Missing values and errors, and how each was handled.</p></div>
-</div></section>
+
+<section class="page-head">
+  <div class="wrap">
+    <span class="kicker">Data preparation</span>
+    <h1>Data cleaning</h1>
+    <p class="lede">Every problem we found in the raw file, what we did about it, and why.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="board three small" id="facts"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Rows kept at each step</h2><p>Red = rows removed</p></div>
+    <div class="chart-card">
+      <div id="waterfall"></div>
+      <p class="caption">Steps that remove nothing are shown dim: those rows were already handled by an earlier step.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Where the problems are</h2><p>Hover a marker for details</p></div>
+    <div class="chart-card">
+      <div class="legend" id="flag-legend"></div>
+      <div id="flagmap"></div>
+      <p class="caption">Launch-period end dates are inferred from the data (counts level off) and are not confirmed by the operator.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Problem, action, reason</h2></div>
+    <div class="table-wrap">
+      <table class="dict wrap">
+        <thead><tr><th>What we found</th><th>What we did</th><th>Why</th></tr></thead>
+        <tbody id="decisions"></tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top:14px">
+      <p><b>No guessing:</b> we did not fill missing counts with averages. Only 5 line-days were affected, and an invented number could hide the very event (a closure) that explains it.</p>
+    </div>
+  </div>
+</section>
+
 </main>
 <footer id="site-footer"></footer>
 <script src="assets/js/config.js"></script>
@@ -24,6 +71,8 @@
 <script src="assets/vendor/d3.min.js"></script>
 <script src="assets/js/charts.js"></script>
 <script src="assets/js/charts-more.js"></script>
+<script src="assets/js/charts-explore.js"></script>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/cleaning.js"></script>
 </body>
 </html>

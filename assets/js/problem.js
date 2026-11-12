@@ -18,8 +18,7 @@
   $("source").innerHTML = `
     <dt>Dataset</dt><dd>${RB.link(L.dataset, L.dataset)}</dd>
     <dt>Owner</dt><dd>${RB.text(L.datasetOwner)}</dd>
-    <dt>License</dt><dd>${RB.text(L.datasetLicense)}</dd>
-    <dt>Accessed</dt><dd>${RB.text(L.datasetAccessed)}</dd>`;
+    <dt>License</dt><dd>${RB.text(L.datasetLicense)}</dd>`;
 
   /* ----- coverage timeline ----- */
   const eq = M.annotations.earthquake;

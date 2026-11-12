@@ -10,6 +10,7 @@ open `index.html` in a browser, or publish the folder as-is.
 | `index.html` and the other `*.html` | The 8 pages (Home, Data, CRISP-DM, Cleaning, Explore, Models, Results, Issues) |
 | `assets/js/config.js` | **Your personal info.** Edit this file to replace every `[Placeholder]` |
 | `assets/js/charts.js` | Shared chart toolkit (colours, tooltip, number formats, sparkline) |
+| `assets/js/charts-explore.js` | Waterfall, flag map, heatmap, diverging bars, timeline (Cleaning and Explore pages) |
 | `assets/js/charts-more.js` | More chart types: bars, grouped bars, timeline, histogram, share bars, legend |
 | `assets/js/common.js` | Navigation bar and footer shared by all pages |
 | `assets/css/style.css` | The dark train-themed design system |
@@ -40,7 +41,7 @@ web app) become clickable links once you put a real URL in.
 |---|---|---|
 | Team | Home (team card) and footer | Done, personal info is a placeholder |
 | Problem & data | Data page (question, source, size, label rule, thresholds) | Done |
-| Data cleaning | Cleaning page | Part 3 |
+| Data cleaning | Cleaning page (waterfall, problem map, decision table) | Done |
 | CRISP-DM explained | CRISP-DM page (cycle, per-phase evidence, loop-backs) | Done |
 | Models & results | Models and Results pages | Part 4 |
 | Evaluation (CV, no leakage, P/R/F1/AUC) | Results page | Part 4 |

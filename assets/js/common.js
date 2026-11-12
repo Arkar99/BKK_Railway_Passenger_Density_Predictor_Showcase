@@ -39,7 +39,7 @@
       <div class="wrap nav">
         <a class="brand" href="index.html" aria-label="${esc((CFG.team || {}).name || "Team")} home">
           <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="4" width="22" height="20" rx="6" fill="none" stroke="#4da3ff" stroke-width="2.2"/><rect x="9" y="8" width="14" height="7" rx="2" fill="#4da3ff" opacity=".9"/><circle cx="11" cy="19.5" r="1.7" fill="#ffc861"/><circle cx="21" cy="19.5" r="1.7" fill="#ffc861"/><path d="M9 28l3-4M23 28l-3-4" stroke="#4da3ff" stroke-width="2.2" stroke-linecap="round"/></svg>
-          <span>${esc((CFG.team || {}).name || "Team RoBot")}<small>${esc((CFG.project || {}).short || "")}</small></span>
+          <span>${esc((CFG.project || {}).short || "")}<small>${esc((CFG.team || {}).name || "Team RoBot")}</small></span>
         </a>
         <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
         <nav aria-label="Main">
