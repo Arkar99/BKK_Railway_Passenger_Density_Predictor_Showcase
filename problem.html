@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problem &amp; Data · Team RoBot</title>
+<meta name="description" content="Research question, data source, size and the Low, Medium, High crowd-level label.">
+<meta name="theme-color" content="#0a0e13">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="data">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main">
+
+<section class="page-head">
+  <div class="wrap">
+    <span class="kicker">Business &amp; data understanding</span>
+    <h1>Problem &amp; data</h1>
+    <p class="lede">What we want to predict, the data we have, and how "crowded" is defined.</p>
+  </div>
+</section>
+
+<!-- 1. Research question -->
+<section class="section">
+  <div class="wrap">
+    <div class="eyebrow">Research question</div>
+    <div class="qcard">
+      <p class="q">Given a <em>date</em> and a <em>rail line</em>, will that day be <em>Low</em>, <em>Medium</em> or <em>High</em> crowd compared with the line's normal?</p>
+      <div class="flow" aria-label="Inputs lead to the model, which gives a crowd level">
+        <span class="node">Line</span><span class="node">Weekday</span><span class="node">Month</span><span class="node">Holiday?</span>
+        <span class="arrow" aria-hidden="true">→</span>
+        <span class="node">Model</span>
+        <span class="arrow" aria-hidden="true">→</span>
+        <span class="node out"><span class="pill low">Low</span><span class="pill medium">Medium</span><span class="pill high">High</span></span>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:14px">
+      <p><b>Scope:</b> the data counts passengers for a whole line per day. It says nothing about single stations or hours of the day, so "crowd level" here means daily volume on that line.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. The data -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>The data</h2><p>Daily passenger counts per rail line</p></div>
+    <div class="board three small" id="facts"></div>
+
+    <div class="grid-2 wide-left" style="margin-top:14px">
+      <div class="panel">
+        <h3>Source</h3>
+        <dl class="kv" id="source"></dl>
+      </div>
+      <div class="panel">
+        <h3>Raw file</h3>
+        <dl class="kv">
+          <dt>File</dt><dd class="mono">daily_passenger.csv</dd>
+          <dt>Shape</dt><dd id="shape"></dd>
+          <dt>Grain</dt><dd>One row per line per day</dd>
+          <dt>Period</dt><dd id="period"></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="table-wrap" style="margin-top:14px">
+      <table class="dict">
+        <thead><tr><th>Raw column</th><th>Looks like</th><th>Meaning</th><th>Becomes</th></tr></thead>
+        <tbody>
+          <tr><td>No.</td><td>1, 2, 3 …</td><td>Row number</td><td>dropped</td></tr>
+          <tr><td>Date</td><td>1/10/2022</td><td>Day (day/month/year text)</td><td><code>Date</code> (real date)</td></tr>
+          <tr><td>Organization</td><td>BTS Green Line</td><td>Rail line or operator, 9 values</td><td><code>Line</code></td></tr>
+          <tr><td>Number_Passenger</td><td>"52,584" or "-"</td><td>Passengers that day, stored as text; "-" means not reported</td><td><code>Passengers</code> (number)</td></tr>
+          <tr><td>Note</td><td>Thai text, mostly empty</td><td>Closure reason (earthquake, 28 to 30 Mar 2025)</td><td><code>Note_EN</code> (English)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Coverage timeline -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>What each line covers</h2><p>Hover a bar for exact dates</p></div>
+    <div class="panel">
+      <div class="chart-title">Coverage and modeling period</div>
+      <div class="chart-sub">Seven lines span all four years. Yellow and Pink opened later, so they have fewer rows. That is expected, not missing data.</div>
+      <div class="chart" id="coverage"></div>
+      <div class="legend" id="coverage-legend"></div>
+      <p class="caption">Shaded: the modeling window. Dashed line: <b>28 Mar 2025</b>, the earthquake closure. Older years are left out of modeling because ridership levels on several lines shifted (see CRISP-DM).</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. The label -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>The label: crowd level</h2><p>Defined per line, from training days only</p></div>
+    <div class="grid-2">
+      <div class="panel">
+        <div class="chart-title">Rule</div>
+        <p style="margin-top:10px"><span class="pill low">Low</span> &nbsp;daily passengers ≤ the line's 33rd percentile</p>
+        <p style="margin-top:10px"><span class="pill medium">Medium</span> &nbsp;in between</p>
+        <p style="margin-top:10px"><span class="pill high">High</span> &nbsp;daily passengers &gt; the line's 66th percentile</p>
+      </div>
+      <div class="panel">
+        <div class="chart-title">Why per line, and why percentiles</div>
+        <p class="chart-sub" style="margin-top:10px;margin-bottom:0">A busy day for BTS Gold Line (about 7 thousand passengers) is a quiet day for BTS Green Line (about 650 thousand). Percentiles make levels comparable across lines and are easy to explain. They are calculated on training days only, so the test period cannot influence them.</p>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:14px">
+      <div class="chart-title">Where the thresholds fall</div>
+      <div class="chart-sub">Daily passengers on the training days (bars) and on the test days (white outline), as a share of each period's days.</div>
+      <div class="seg" id="line-seg" role="group" aria-label="Choose a line"></div>
+      <div class="chart" id="hist"></div>
+      <div class="readout" id="hist-readout"></div>
+    </div>
+
+    <div class="grid-2" style="margin-top:14px">
+      <div class="panel">
+        <div class="chart-title">Training period</div>
+        <div class="chart-sub" id="train-sub"></div>
+        <div class="chart" id="share-train"></div>
+      </div>
+      <div class="panel">
+        <div class="chart-title">Test period</div>
+        <div class="chart-sub" id="test-sub"></div>
+        <div class="chart" id="share-test"></div>
+      </div>
+    </div>
+    <div class="legend" id="share-legend"></div>
+    <p class="caption">Training labels are balanced (about a third each) by construction. In the test period several lines are busier than their training years, so levels shift towards High. This is an open issue, discussed on the Issues page.</p>
+  </div>
+</section>
+
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/js/config.js"></script>
+<script src="data/site-data.js"></script>
+<script src="assets/vendor/d3.min.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/charts-more.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/problem.js"></script>
+</body>
+</html>

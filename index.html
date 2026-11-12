@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bangkok Rail Crowd Levels · Team RoBot</title>
+<meta name="description" content="Data mining project: predicting Low, Medium or High daily crowd levels on nine Bangkok rail lines.">
+<meta name="theme-color" content="#0a0e13">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header"></header>
+<main id="main">
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Data mining · Bangkok rail</span>
+    <h1>How <em>crowded</em> will the line be?</h1>
+    <p class="lede">Classifying daily crowd levels (Low, Medium, High) on nine Bangkok rail lines from four years of ridership data.</p>
+    <div class="chips" aria-label="Methods used">
+      <span class="chip">CRISP-DM</span><span class="chip">Decision Tree</span><span class="chip">Random Forest</span><span class="chip">Time-based validation</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="results.html">See the results</a>
+      <a class="btn" href="explore.html">Explore the data</a>
+    </div>
+  </div>
+  <div class="track" aria-hidden="true">
+    <svg viewBox="0 0 1200 72" preserveAspectRatio="none">
+      <defs><pattern id="sleepers" width="22" height="72" patternUnits="userSpaceOnUse"><rect x="9" y="46" width="4" height="12" fill="#1b2632"/></pattern></defs>
+      <rect width="1200" height="72" fill="url(#sleepers)"/>
+      <line x1="0" y1="50" x2="1200" y2="50" stroke="#2a3a4c" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+      <line x1="0" y1="56" x2="1200" y2="56" stroke="#2a3a4c" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+    </svg>
+    <svg class="train" viewBox="0 0 190 40">
+      <rect x="2" y="4" width="186" height="26" rx="10" fill="#121a23" stroke="#4da3ff" stroke-width="2"/>
+      <g fill="#4da3ff" opacity=".85"><rect x="14" y="10" width="28" height="9" rx="3"/><rect x="50" y="10" width="28" height="9" rx="3"/><rect x="86" y="10" width="28" height="9" rx="3"/><rect x="122" y="10" width="28" height="9" rx="3"/></g>
+      <rect x="158" y="10" width="22" height="9" rx="3" fill="#ffc861"/>
+      <circle cx="30" cy="34" r="3.5" fill="#66768a"/><circle cx="62" cy="34" r="3.5" fill="#66768a"/><circle cx="128" cy="34" r="3.5" fill="#66768a"/><circle cx="160" cy="34" r="3.5" fill="#66768a"/>
+    </svg>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>The project in numbers</h2></div>
+    <div class="board" id="board" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>The nine lines</h2><p>Weekly average ridership, Oct 2022 to Oct 2026. Hover a chart to read values.</p></div>
+    <div class="cards" id="cards"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>The journey: CRISP-DM</h2><p>Each station opens the matching page.</p></div>
+    <ol class="route" id="route"></ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Team</h2></div>
+    <div class="team" id="team"></div>
+  </div>
+</section>
+
+</main>
+<footer id="site-footer"></footer>
+<script src="assets/js/config.js"></script>
+<script src="data/site-data.js"></script>
+<script src="assets/vendor/d3.min.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/charts-more.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>
