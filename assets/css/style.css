@@ -546,3 +546,30 @@ ol.steps b { font-weight: 650; } ol.steps span { font-size: 14px; color: var(--m
 .detail { overflow-wrap: anywhere; }
 .detail .fig.fig-link { font: 650 clamp(18px, 2.4vw, 22px)/1.2 var(--font); }
 .detail .fig.fig-link { margin-bottom: 10px; }
+
+/* Home: milestones */
+.miles { list-style: none; margin: 0; padding: 26px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; position: relative; }
+.miles::before { content: ""; position: absolute; left: 4%; right: 4%; top: 7px; height: 4px; border-radius: 2px; background: var(--border); }
+.ms { position: relative; display: flex; flex-direction: column; }
+.ms::before { content: ""; position: absolute; left: 50%; top: -26px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background: var(--surface); border: 3px solid var(--accent); z-index: 1; }
+.ms.past::before { background: var(--accent); }
+.ms.now::before { background: var(--board); border-color: var(--board); box-shadow: 0 0 0 5px rgba(255,200,97,.18); }
+.ms.next::before { border-color: var(--faint); }
+.ms-head { background: var(--surface-2, #17212c); border: 1px solid var(--border-soft); border-bottom: 0; border-radius: var(--radius) var(--radius) 0 0; padding: 14px 18px; text-align: center; border-top: 3px solid var(--accent); }
+.ms.now .ms-head { border-top-color: var(--board); }
+.ms.next .ms-head { border-top-color: var(--faint); }
+.ms-head span { display: block; font: 600 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--faint); }
+.ms.now .ms-head span { color: var(--board); }
+.ms-head b { font: 700 22px var(--mono); }
+.ms-body { flex: 1; background: var(--surface); border: 1px solid var(--border-soft); border-radius: 0 0 var(--radius) var(--radius); padding: 14px 18px 18px; display: flex; flex-direction: column; gap: 10px; }
+.ms-week { font: 500 12px var(--mono); color: var(--faint); text-align: center; }
+.ms-body h3 { font-size: 17px; font-weight: 650; text-align: center; color: var(--accent); margin: 0; }
+.ms.now .ms-body h3 { color: var(--board); }
+.ms-body ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 7px; align-content: start; font-size: 13.5px; color: var(--muted); flex: 1; }
+.ms-body li { padding-left: 18px; position: relative; }
+.ms-body li::before { content: "✓"; position: absolute; left: 0; color: var(--low); font-weight: 700; }
+.ms.next .ms-body li::before { content: "○"; color: var(--faint); font-weight: 400; }
+.ms-links { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.ms-link { font-size: 13px; color: var(--accent); }
+@media (max-width: 1000px) { .miles { grid-template-columns: repeat(2, 1fr); padding-top: 0; } .miles::before, .ms::before { display: none; } }
+@media (max-width: 560px) { .miles { grid-template-columns: 1fr; } }
