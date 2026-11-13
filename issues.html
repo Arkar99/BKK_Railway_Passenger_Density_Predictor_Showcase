@@ -13,10 +13,58 @@
 <a class="skip" href="#main">Skip to content</a>
 <header id="site-header"></header>
 <main id="main">
-<section class="section"><div class="wrap">
-  <div class="section-head"><h2>Open Issues & Resources</h2></div>
-  <div class="stub"><h2>Coming in Part 5</h2><p>What is not working yet, next steps, code and data links.</p></div>
-</div></section>
+
+<section class="page-head">
+  <div class="wrap">
+    <span class="kicker">Open issues &amp; resources</span>
+    <h1>What is not working yet</h1>
+    <p class="lede">The limits of this study, what we would do next, and where to find the code and data.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Open issues</h2><p>Most serious first</p></div>
+    <div class="issues" id="issues"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Evidence: the test months look different</h2><p>Share of Low, Medium and High days</p></div>
+    <div class="grid-2">
+      <div class="chart-card"><div class="chart-title">Training period</div><div class="chart-sub">Equal thirds by design</div><div id="share-train"></div></div>
+      <div class="chart-card"><div class="chart-title">Test period</div><div class="chart-sub">Jul to Oct 2026</div><div id="share-test"></div></div>
+    </div>
+    <div class="legend" id="share-legend" style="margin-top:12px"></div>
+    <p class="finding" id="drift-finding" style="margin-top:10px"></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Next steps</h2><p>In order of expected payoff</p></div>
+    <ol class="steps" id="steps"></ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Code and data</h2><p>All links open without login</p></div>
+    <div class="grid-2">
+      <div class="panel"><h3>Links</h3><dl class="kv" id="links"></dl></div>
+      <div class="panel"><h3>Data files behind every chart</h3><ul class="plain" id="files"></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Review-form checklist</h2><p>Milestone #3</p></div>
+    <div class="table-wrap"><table class="dict wrap"><thead><tr><th>Criterion</th><th>Where on this site</th><th>Status</th></tr></thead><tbody id="check"></tbody></table></div>
+  </div>
+</section>
+
 </main>
 <footer id="site-footer"></footer>
 <script src="assets/js/config.js"></script>
@@ -25,5 +73,6 @@
 <script src="assets/js/charts.js"></script>
 <script src="assets/js/charts-more.js"></script>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/issues.js"></script>
 </body>
 </html>

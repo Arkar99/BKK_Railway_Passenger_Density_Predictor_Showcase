@@ -11,6 +11,7 @@ open `index.html` in a browser, or publish the folder as-is.
 | `assets/js/config.js` | **Your personal info.** Edit this file to replace every `[Placeholder]` |
 | `assets/js/charts.js` | Shared chart toolkit (colours, tooltip, number formats, sparkline) |
 | `assets/js/charts-explore.js` | Waterfall, flag map, heatmap, diverging bars, timeline (Cleaning and Explore pages) |
+| `assets/js/charts-model.js` | Fold strip, small tree, ROC, confusion matrix (Models and Results pages) |
 | `assets/js/charts-more.js` | More chart types: bars, grouped bars, timeline, histogram, share bars, legend |
 | `assets/js/common.js` | Navigation bar and footer shared by all pages |
 | `assets/css/style.css` | The dark train-themed design system |
@@ -43,7 +44,7 @@ web app) become clickable links once you put a real URL in.
 | Problem & data | Data page (question, source, size, label rule, thresholds) | Done |
 | Data cleaning | Cleaning page (waterfall, problem map, decision table) | Done |
 | CRISP-DM explained | CRISP-DM page (cycle, per-phase evidence, loop-backs) | Done |
-| Models & results | Models and Results pages | Part 4 |
-| Evaluation (CV, no leakage, P/R/F1/AUC) | Results page | Part 4 |
-| Open issues | Issues page | Part 5 |
-| Website (links, code and data linked) | Footer on every page, Issues page | Part 5 |
+| Models & results | Models and Results pages | Done |
+| Evaluation (CV, no leakage, P/R/F1/AUC) | Results page (table, CV folds, confusion, ROC) and Models page (leakage) | Done |
+| Open issues | Issues page (issues, evidence, next steps) | Done |
+| Website (links, code and data linked) | Footer on every page, Issues page | Done once you fill in config.js |

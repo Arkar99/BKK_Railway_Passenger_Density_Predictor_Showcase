@@ -13,10 +13,86 @@
 <a class="skip" href="#main">Skip to content</a>
 <header id="site-header"></header>
 <main id="main">
-<section class="section"><div class="wrap">
-  <div class="section-head"><h2>Models</h2></div>
-  <div class="stub"><h2>Coming in Part 4</h2><p>Baselines, Decision Tree and Random Forest, and why.</p></div>
-</div></section>
+
+<section class="page-head">
+  <div class="wrap">
+    <span class="kicker">Modeling</span>
+    <h1>Models</h1>
+    <p class="lede">Two baselines and two real models, each a step up from the one before. A model only earns its place by beating the simpler one.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>What goes in, what comes out</h2></div>
+    <div class="qcard">
+      <div class="flow" aria-label="Inputs lead to the model, which gives a crowd level">
+        <span class="node">Line</span><span class="node">Day of week</span><span class="node">Month</span><span class="node">Holiday?</span>
+        <span class="arrow" aria-hidden="true">→</span><span class="node">Model</span><span class="arrow" aria-hidden="true">→</span>
+        <span class="node out"><span class="pill low">Low</span><span class="pill medium">Medium</span><span class="pill high">High</span></span>
+      </div>
+    </div>
+    <p class="finding" style="margin-top:14px">Only calendar facts are used. <b>Passengers is never an input</b>, because it is what the label is made from.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Four models, simple to flexible</h2></div>
+    <div class="mcards" id="mcards"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>Why a Decision Tree and a Random Forest</h2></div>
+    <div class="grid-2">
+      <div class="panel"><h3>Decision Tree</h3><ul class="plain">
+        <li><b>Readable.</b> The result is a set of yes / no rules you can follow by hand.</li>
+        <li><b>Fits our data.</b> Works with a mix of categories and numbers; no scaling needed.</li>
+        <li><b>Weakness.</b> One tree can memorise the training days.</li></ul></div>
+      <div class="panel"><h3>Random Forest</h3><ul class="plain">
+        <li><b>Steadier.</b> Averages 100 different trees, so one odd split matters less.</li>
+        <li><b>Finds combinations.</b> For example "weekend and holiday and this line".</li>
+        <li><b>Weakness.</b> Harder to read, so we show feature importance instead.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>A small tree you can read</h2><p>Depth 3 teaching version</p></div>
+    <div class="chart-card">
+      <div class="legend" id="tree-legend"></div>
+      <div id="tree"></div>
+      <p class="caption">Follow "yes" or "no" down to a leaf. The thin bar in each box shows the Low / Medium / High mix of the training days that reach it. The tuned model is deeper (depth 5); this one is only for reading.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>What the models rely on</h2><p>Share of importance</p></div>
+    <div class="chart-card">
+      <div class="seg" id="imp-pick" role="group" aria-label="Choose a model"></div>
+      <div id="imp" style="margin-top:14px"></div>
+      <p class="finding" id="imp-finding" style="margin-top:6px"></p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><h2>How we avoid leakage</h2><p>Time only moves forward</p></div>
+    <div class="chart-card">
+      <div class="legend" id="fold-legend"></div>
+      <div id="folds"></div>
+      <p class="caption" id="fold-note"></p>
+    </div>
+    <div class="board three small" id="checks" style="margin-top:14px"></div>
+  </div>
+</section>
+
 </main>
 <footer id="site-footer"></footer>
 <script src="assets/js/config.js"></script>
@@ -24,6 +100,8 @@
 <script src="assets/vendor/d3.min.js"></script>
 <script src="assets/js/charts.js"></script>
 <script src="assets/js/charts-more.js"></script>
+<script src="assets/js/charts-model.js"></script>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/modeling.js"></script>
 </body>
 </html>

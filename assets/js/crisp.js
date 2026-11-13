@@ -145,7 +145,7 @@
     detail.style.setProperty("--c", colors[i]);
     const fig = p.fig != null
       ? `<div class="fig">${RB.esc(p.fig)}</div>`
-      : `<div class="fig" style="font-size:18px">${RB.link(CFG.links.webapp, CFG.links.webapp)}</div>`;
+      : `<div class="fig fig-link">${RB.link(CFG.links.webapp, "Open the web app ↗")}</div>`;
     detail.innerHTML = `
       <div class="figcap">Phase ${i + 1} of 6</div>
       <h3>${p.name}</h3>
