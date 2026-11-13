@@ -9,34 +9,33 @@ window.SITE_CONFIG = {
     type: "Solo team",
     members: [
       {
-        name: "[Your Full Name]",
+        name: "Arkar Phyo",
         role: "Solo: data cleaning, modeling, evaluation and website",
-        studentId: "[Student ID]",
-        email: "[your.email@university.edu]",
-        github: "[GitHub profile URL]"
+        studentId: "6703500",
+        email: "arkar.p67@rsu.ac.th",
+        github: "https://github.com/Arkar99/"
       }
       // For a larger team, copy the block above and add more members.
     ]
   },
 
   course: {
-    university: "[University Name]",
-    program: "[Faculty / Program]",
-    course: "[Course Code and Name]",
-    instructor: "[Instructor Name]",
+    university: "Rangsit University",
+    program: "ICT324",
+    course: "Data Warehouse & Data Mining",
+    instructor: "Dr. Krisada",
     milestone: "Milestone #3",
-    term: "[Semester / Year]"
+    term: "1/2026"
   },
 
   // Public links (must open without login). Leave as "[...]" until you have them.
   links: {
-    repo: "[GitHub repository URL]",
-    notebook: "[Colab notebook URL]",
-    dataset: "[Dataset source URL]",
-    datasetOwner: "[Data owner / publisher]",
-    datasetAccessed: "[Date accessed]",
-    datasetLicense: "[Dataset license]",
-    webapp: "https://bkk-railway-passenger-density-predi.vercel.app/"
+    repo: "https://github.com/Arkar99/bkk-railway-passenger-density-predictor",
+    notebook: "https://colab.research.google.com/drive/1Xdo1w53qcjqNonB08UqDMh-YhjgCCKlK?usp=sharing",
+    dataset: "https://data.go.th/dataset/stat_pass_rail",
+    datasetOwner: "Department of Rail Transport",
+    datasetLicense: "Open Data Common",
+    webapp: "https://arkar99.github.io/BKK_Railway_Passenger_Density_Predictor_Showcase/index.html"
   },
 
   project: {
